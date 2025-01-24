@@ -7,7 +7,7 @@ import vercelServerless from '@astrojs/vercel/serverless';
 
 export default defineConfig({
   site: 'https://jeancagomez17.github.io',
-  base: '/',
+  base: 'Parquearse.github.io',
   integrations: [tailwind(), mdx()],
   output: 'hybrid',
   adapter: vercelServerless(),
