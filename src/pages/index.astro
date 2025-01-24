@@ -1,0 +1,291 @@
+---
+import Layout from '@layouts/Layout.astro';
+import FormularioPQR from '@components/FormularioPQR.astro';
+import Modal from '@components/Modal.astro';
+
+
+
+---
+
+<Layout title="Parquearse">
+	<!--<Modal/> -->
+	<section class="relative flex justify-center items-center mb-10 " id="banner">
+		<!-- SVG shape, colocado debajo -->
+		<div class="absolute inset-0 opacity-60 text-custom-color-1 flex justify-center items-center p-10 mt-16">
+			<svg class="h-96 w-full" viewBox="0 0 160 160" preserveAspectRatio="none">
+			  <path
+				d="M157.4,45.5c11.3-39.1-16.3-50.2-43.8-43.8c-25.2,5.8-35.5,17.2-61,16.5C21.7,17.4,0,39.8,0,71.3
+				  c0,49.1,58.2,47.8,76.2,68.5c38.8,44.7,92.8,8.2,79.3-40.3C148.1,73.2,155.9,50.6,157.4,45.5z"
+				fill="#8fe74a"
+			  ></path>
+			</svg>
+		  </div>
+		  
+		  <!-- Contenido: Imagen y Texto -->
+		  <div class="relative flex flex-col lg:flex-row items-center justify-center w-full lg:w-4/3 space-y-2 space-x-2 z-8">
+			<!-- Image -->
+			<div class="flex-shrink-0 w-full lg:w-1/2">
+			  <img class="w-full object-contain animate__animated animate__backInLeft" src="images/parkinintegrated1.png" alt="Parking Integrated" />
+			</div>
+		  
+			<!-- Text -->
+			 <div class=" lg:w-96">
+				<h1 class=" text-center lg:text-center text-xl lg:text-4xl font-robotoCondensed font-normal text-white-800 ">
+					“Ofrecemos alternativas. <br />
+					que buscan satisfacer <br />
+					las necesidades de <br />
+					nuestros clientes”
+				  </h1>
+			 </div>
+			
+		  </div>
+	  </section>
+
+	  <section class="mb-3 ">
+		<div class="p-5 text-center" >
+			<h1 class="text-3xl sm:text-6xl  font-robotoCondensed ">Soluciones y servicios</h1>
+			<p class="p-4 text-[13pt]">Analizamos al detalle las necesidades de su empresa para ofrecerle soluciones a la medida de su negocio. Queremos hacer más eficiente el servicio de su estacionamiento y generar mayor confianza en sus clientes.</p>
+		</div>
+		<div class="max-w-4xl mx-auto p-1">
+			<div class="grid w-full gap-3 md:grid-cols-3 place-content-center p-3">
+				<div class="card  max-w-sm h-96 p-7 bg-white border border-gray-100  dark:bg-[#8fc74a] flex flex-col justify-between text-center  shadow-md shadow-black">
+					<div>
+						<div class="flex justify-center items-center mb-5">
+							<img src="images/2100775.png" alt="">
+						</div>
+						<h5 class="mb-2 lg:text-xl text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">Administración y operación
+							de estacionamientos</h5>
+					</div>
+					<a href="https://www.parquearse.com/soluciones/" class="flex justify-center  font-medium rounded-full border px-6 py-3 border-blue-700 items-center text-blue-600 hover:bg-blue-700 hover:text-white">
+						MÁS INFORMACIÓN
+						<svg class="w-3 h-3 ms-2.5 rtl:rotate-[270deg]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
+							<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11v4.833A1.166 1.166 0 0 1 13.833 17H2.167A1.167 1.167 0 0 1 1 15.833V4.167A1.166 1.166 0 0 1 2.167 3h4.618m4.447-2H17v5.768M9.111 8.889l7.778-7.778"/>
+						</svg>
+					</a>
+				</div>
+				
+				<div class="card  max-w-sm h-96 p-7 bg-white border border-gray-100 dark:bg-[#8fc74a] flex flex-col justify-between text-center shadow-md shadow-black">
+					<div>
+						<div class="flex justify-center items-center mb-5">
+							<img src="images/9020587.png" alt="">
+						</div>
+						<h5 class="mb-2 lg:text-xl text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">Software y equipos para control vehicular</h5>
+					</div>
+					<a href="https://www.parquearse.com/soluciones/" class="flex justify-center  font-medium rounded-full border px-6 py-3 border-blue-700 items-center text-blue-600 hover:bg-blue-700 hover:text-white">
+						MÁS INFORMACIÓN
+						<svg class="w-3 h-3 ms-2.5 rtl:rotate-[270deg]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
+							<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11v4.833A1.166 1.166 0 0 1 13.833 17H2.167A1.167 1.167 0 0 1 1 15.833V4.167A1.166 1.166 0 0 1 2.167 3h4.618m4.447-2H17v5.768M9.111 8.889l7.778-7.778"/>
+						</svg>
+					</a>
+				</div>
+				<div class="card max-w-sm h-96 p-7 bg-white border border-gray-100 shadow-md shadow-black dark:bg-[#8fc74a] flex flex-col justify-between text-center">
+					<div>
+						<div class="flex justify-center items-center mb-5">
+							<img src="images/6854731.png" alt="">
+						</div>
+						<h5 class="mb-2 lg:text-xl text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">Servicios adicionales</h5>
+					</div>
+					<a href="https://www.parquearse.com/servicios/" class=" flex justify-center font-medium rounded-full border px-6 py-3 border-blue-700 items-center text-blue-600 hover:bg-blue-700 hover:text-white">
+						MÁS INFORMACIÓN
+						<svg class="w-3 h-3 ms-2.5 rtl:rotate-[270deg]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
+							<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11v4.833A1.166 1.166 0 0 1 13.833 17H2.167A1.167 1.167 0 0 1 1 15.833V4.167A1.166 1.166 0 0 1 2.167 3h4.618m4.447-2H17v5.768M9.111 8.889l7.778-7.778"/>
+						</svg>
+					</a>
+				</div>
+			</div>
+		</div>
+	  </section>
+	  <div class="border-t border-2 border-green-900 my-8 mx-auto w-full"></div>
+	  <section class="mb-3 p-5">
+		<div class="text-center mb-5 p-5">
+			<h1 class="text-3xl sm:text-6xl font-robotoCondensed ">Servicio con valor agregado para nuestros usuarios</h1>
+		</div>
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+			<!-- Texto -->
+			<div class="text-lg sm:text-xl ">
+				<h3 class="relative font-normal mb-14 text-center text-3xl after:block after:h-1 after:bg-lime-600 after:w-[100%] after:absolute after:left-0 after:bottom-[-10px]">
+					Facturación electrónica
+				  </h3>
+			  <p class="mb-4">
+				Tenga presente las siguientes instrucciones:
+			  </p>
+			  <ol class="list-decimal pl-5 mb-4 text-justify">
+				<li class="mb-2">
+				  Verifique que se encuentre creado como cliente en nuestra base de datos. En caso de no estarlo, diligencie el formulario haciendo clic sobre el botón abajo.&nbsp;
+				</li>
+				<li class="mb-2">
+				  Al momento de pagar por el servicio, informe al operador del parqueadero su solicitud de factura electrónica. Si realiza el pago en un punto de pago automático seleccione la opción de "requiero factura electrónica".&nbsp;
+				</li>
+				<li class="mb-4">
+				  En caso de dudas o inquietudes por favor enviar correo electrónico a auxiliar@parquearse.com
+				</li>
+			  </ol>
+			  <div class="text-center">
+				<a
+				href="https://cloudserver.parquearse.com:5000/"
+				class="inline-block px-6 py-3 bg-gradient-to-r from-green-500 to-green-700 text-white font-medium rounded-lg hover:bg-green-600"
+				target="_blank"
+			  >Crearme como cliente</a>
+			  </div>
+			  
+			</div>
+			<!-- Imagen -->
+			<div class="flex justify-center  ">
+			  <img
+				class="animate__animated animate__backInDown w-96 h-auto object-contain"
+				src="images/facelectronica.png"
+				alt="Facturación electrónica"
+			  />
+			</div>
+		  </div>
+       
+        
+      </div>
+	  </section>
+	  
+	  <section class="mb-3 p-5">
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+			<!-- Imagen (aparece primero en pantallas grandes y abajo en móviles) -->
+			 			<!-- Texto (aparece al lado en pantallas grandes y arriba en móviles) -->
+			<div class="text-lg sm:text-xl order-first sm:order-last">
+				<h3 class="relative font-normal mb-14 text-center text-3xl after:block after:h-1 after:bg-lime-600 after:w-[100%] after:absolute after:left-0 after:bottom-[-10px]">
+				  Pico y placa Bucaramanga
+				</h3>
+				<p class="mb-4">
+				  Esta es la rotación de dígitos para los meses de Octubre, Noviembre y Diciembre del 2024. Tenga presente que la restricción va desde las seis de la mañana hasta las ocho de la noche de lunes a viernes. Los días sábados la restricción es de nueve de la mañana a una de la tarde.
+				</p>
+			  </div>
+			<div class="flex justify-center order-last sm:order-first">
+			  <img
+				class="animate__animated animate__backInDown w-full h-auto object-contain"
+				src="images/picoyplaca.png"
+				alt="Pico y placa Bucaramanga"
+			  />
+			</div>
+		  
+
+		  </div>
+		
+	  </section>
+
+	  <section class="mb-5 p-5">
+
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+			<!-- Texto -->
+			<div class="text-lg sm:text-xl ">
+				<h3 class="relative font-normal mb-14 text-center text-3xl after:block after:h-1 after:bg-lime-600 after:w-[100%] after:absolute after:left-0 after:bottom-[-10px]">
+					Parqueadero gratis
+				  </h3>
+			  <p class="mb-10 text-justify">
+				Con nuestros aliados obtiene parqueadero gratis. Identifique la marca del establecimiento y ubique el parqueadero en donde hay convenio. Tenga en cuenta que cada establecimiento tiene sus propias condiciones y restricciones para otorgar el tiempo de parqueadero.
+			  </p>
+
+			  <div class="text-center">
+				<a
+				href="https://cloudserver.parquearse.com:5000/"
+				class="inline-block px-6 py-3 bg-gradient-to-r lg:text-xl text-sm  from-green-500 to-green-700 text-white font-medium rounded-lg hover:bg-green-600"
+				target="_blank"
+			  >QUIERO VINCULAR MI ESTABLECIMIENTO</a>
+			  </div>
+			  
+			</div>
+			<!-- Imagen -->
+			<div class="flex justify-center  ">
+			  <img
+				class="animate__animated animate__backInDown w-full h-auto object-contain rounded-full shadow-xl"
+				src="images/conv1.png"
+				alt="Facturación electrónica"
+			  />
+			</div>
+		  </div>
+       
+        
+      </div>
+	  </section>
+
+	  <section class="mb-16 p-5">
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+			<!-- Imagen (aparece primero en pantallas grandes y abajo en móviles) -->
+			 			<!-- Texto (aparece al lado en pantallas grandes y arriba en móviles) -->
+			<div class="text-lg sm:text-xl order-first sm:order-last">
+				<h3 class="relative font-normal mb-14 text-center text-3xl after:block after:h-1 after:bg-lime-600 after:w-[100%] after:absolute after:left-0 after:bottom-[-10px]">
+					Recibimos tarjetas débito o crédito
+				</h3>
+				<p class="mb-4">
+					Ofrecemos otra forma de pagar por el servicio de parqueadero.
+					Pague desde el valor de una hora en adelante o por el servicio de mensualidad 
+				</p>
+			  </div>
+			<div class="flex justify-center order-last sm:order-first">
+			  <img
+				class=" w-80 h-auto object-contain"
+				src="images/datafonos.png"
+				alt="Pico y placa Bucaramanga"
+				id="myDiv"
+			  />
+			</div>
+		  
+
+		  </div>
+		
+	  </section>
+
+	  <section class="mb-10 p-5">
+
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-2">
+			<!-- Texto -->
+			<div class="text-2xl sm:text-xl text-center">
+				<h3 class="relative font-normal mb-2  text-4xl after:block">"Siempre un espacio cerca"
+				  </h3>
+			  <h4 class="text-xl sm:text-3xl mb-16">
+				Conoce nuestras sedes, horario​s y tarifas
+			  </h4>
+			  <div class="grid grid-cols-3 gap-1 place-content-center items-center mb-14">
+				<span class="">
+					<h1 class="text-4xl text-lime-600 font-semibold ">10</h1>
+					<h1 class="font-semibold text-sm sm:text-xl">Sedes</h1>
+				</span>
+				<span>
+					<h1 class="text-4xl text-lime-600 font-semibold ">3282</h1>
+					<h1 class="font-semibold text-sm sm:text-xl">Cupos de carro</h1>
+				</span>
+				<span>
+					<h1 class="text-4xl text-lime-600 font-semibold ">1520</h1>
+					<h1 class="font-semibold text-sm sm:text-xl">Cupos de moto</h1>
+				</span>
+			</div>
+			</div>
+
+
+			
+			<!-- Imagen -->
+			<div class="flex justify-center  ">
+			  <img
+				class="card w-96 h-auto object-contain "
+				src="images/b6edb6039c389d0616eb98b791f1db35a9e4ae656cb7de897d51752964ce334db224d12571b40321631c5c34c9a6b68a21cf7aa4ee32610895364e_1280.png"
+				alt="Facturación electrónica"
+			  />
+			</div>
+	
+       
+        
+      </div>
+	  </section>
+	 
+	  <section>
+		
+	  </section>
+
+</Layout>
+
+<script src="/js/prueba.js" is:inline></script>
+<script  is:inline>
+
+  
+	document.addEventListener('DOMContentLoaded', function () {
+
+	  // Asegúrate de que animacionDiv esté disponible
+	  animacionDiv('service', 'animate__backInLeft');
+	  animacionDiv('card', 'animate__backInDown');
+	});
+  </script>

@@ -1,0 +1,32 @@
+---
+import FormularioPQR from "@components/FormularioPQR.astro";
+import Layout from "@layouts/Layout.astro";
+
+---
+<Layout title="Contactenos">
+ 
+	  <section class="p-5">
+		<div class="text-center mb-5 p-5">
+			<h1 class="text-3xl sm:text-6xl font-robotoCondensed ">Servicio al Cliente</h1>
+		</div>
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-2 bg-white p-2">
+			<img
+        class="service w-full"
+        src="/images/pqr.png"
+        alt=""
+        data-image-width="579"
+        data-image-height="529"
+        data-animation-name="customAnimationIn"
+        data-animation-duration="1750"
+        data-animation-delay="750"
+      />
+
+      <div class="u-form u-form-1">
+	
+	  <div class="pb-12">
+		  <FormularioPQR/>
+      </div>
+		</div>
+		
+	  </section>
+</Layout>

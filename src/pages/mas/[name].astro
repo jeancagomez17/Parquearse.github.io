@@ -1,0 +1,23 @@
+---
+// Importa GetStaticPaths como tipo
+import type { GetStaticPaths } from 'astro';
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  // Retorna las rutas estáticas que deseas generar
+  return [
+    { params: { name: "politica" } },
+    { params: { name: "terminos" } },
+    // Agrega más valores según necesites
+  ];
+};
+
+const { name } = Astro.params; // Obtén el parámetro de la URL
+---
+
+<html>
+  <body class="p-4">
+    <h1>Detalles del Producto</h1>
+    <p>ID del producto: {name}</p>
+  
+  </body>
+</html>

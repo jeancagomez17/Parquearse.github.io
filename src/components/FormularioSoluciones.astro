@@ -1,0 +1,156 @@
+---
+import ButtonRef from "./ButtonRef.astro"
+
+---
+<form id="formSoluciones" class="p-7 bg-white text-lg">
+    <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6 mb-4">
+      <div class="sm:col-span-3">
+        <label for="first-name" class="block  leading-6 text-gray-900">Nombre / Apellido</label>
+        <div class="mt-2">
+          <input type="text" name="first-name" id="nombreInput" required placeholder="Introduzca su nombre" autocomplete="given-name" class="block w-full rounded-md  border p-2.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+        </div>
+      </div>
+
+      <div class="sm:col-span-3">
+        <label for="last-name" class="block  leading-6 text-gray-900">Teléfono </label>
+        <div class="mt-2">
+          <input type="text" name="last-name"    type="tel"
+          pattern="\+?\d{0,3}[\s\(\-]?([0-9]{2,3})[\s\)\-]?([\s\-]?)([0-9]{3})[\s\-]?([0-9]{2})[\s\-]?([0-9]{2})"
+          placeholder="Ingrese su teléfono "
+          id="telefonoInput"required autocomplete="family-name" class="block w-full rounded-md border-0 p-2.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+        </div>
+      </div>
+    </div>
+    <div class="mb-4">
+        <label for="first-name" class="block leading-6 text-gray-900">Empresa</label>
+        <div class="mt-2">
+          <input type="text" name="first-name"  id="empresaInput" placeholder="Nombre de la empresa" autocomplete="given-name" class="block w-full rounded-md border-0 p-2.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+        </div>
+    </div>
+    <div class="mb-4">
+        <label for="first-name" class="block  leading-6 text-gray-900">Email</label>
+        <div class="mt-2">
+          <input type="text" name="first-name"  id="emailInput" required placeholder="Introduzca su correo electronico" autocomplete="given-name" class="block w-full rounded-md border-0 p-2.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+        </div>
+    </div>
+    <div class="mb-5">
+        <label class="font-semibold ">Seleccione en cuál de nuestras soluciones está interesado</label>
+        <div class="mt-5">
+          <div class="mb-3">
+            <input id="field" type="radio" name="solucion" value="Operación Parqueadero" class=""
+              checked="checked">
+            <label class="">Operación Parqueadero</label>
+          </div>
+          <div class="">
+            <input id="field" type="radio" name="solucion" value="Software y equipo tecnológico"
+              class="">
+            <label class="" for="field">Software y equipo tecnológico</label>
+          </div>
+        </div>
+      </div>
+
+    <div class="col-span-full mb-4">
+        <label for="about" class="block  font-medium leading-6 text-gray-900">Mensaje</label>
+        <div class="mt-2">
+          <textarea id="mensajeInput" name="about" rows="4"placeholder="Cuéntenos su experiencia" class="block w-full rounded-md border-0 p-2.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"></textarea>
+        </div>
+        
+      </div>
+    
+      
+      <div class="text-center ">
+        <ButtonRef value='Enviar' type='submit' id="btnEnviar" />
+      </div>
+    </form>
+
+    <script>
+import Swal from "sweetalert2";
+import axios from "axios";
+import { obtenerRadio,getUrl } from "@lib/helpers";
+
+
+const inputs = {
+    nombre: document.getElementById('nombreInput') as HTMLInputElement,
+    empresa: document.getElementById('empresaInput') as HTMLInputElement,
+    telefono: document.getElementById('telefonoInput') as HTMLInputElement,
+    email: document.getElementById('emailInput') as HTMLInputElement,
+    formSoluciones: document.getElementById('formSoluciones') as HTMLFormElement,
+    mensaje: document.getElementById('mensajeInput') as HTMLInputElement,
+    btnEnviar:document.getElementById('btnEnviar') as HTMLButtonElement
+}
+
+
+async function enviarSolicitud(newData: any) {
+    try {
+      Swal.fire({
+        title: "Cargando",
+        text: "Espere un momento",
+        confirmButtonText: "Ok",
+        icon: "success",
+        confirmButtonColor: "#314c53",
+      });
+      inputs.btnEnviar.disabled = true;
+      const url = getUrl("solicitud-servicios/create");
+      const response = await axios.post(url, newData, {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "*/*",
+        },
+      });
+
+      if (response.data.estado) {
+        inputs.formSoluciones.reset();
+        Swal.fire({
+          title: "",
+          text: response.data.msg,
+          confirmButtonText: "Ok",
+          icon: "success",
+          confirmButtonColor: "#314c53",
+        });
+        return;
+      }
+
+      Swal.fire({
+        title: "",
+        text: response.data.msg,
+        confirmButtonText: "Ok",
+        icon: "warning",
+        confirmButtonColor: "#314c53",
+      });
+    } catch (error) {
+      console.error("Axios error:", error);
+      Swal.fire({
+        title: "Error",
+        text: "Hubo un problema con la solicitud. Por favor, intenta nuevamente.",
+        confirmButtonText: "Ok",
+        icon: "error",
+        confirmButtonColor: "#314c53",
+      });
+    }
+  }
+
+  inputs.formSoluciones.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    if (inputs.mensaje.value.length >= 700) {
+      return Swal.fire({
+        title: "",
+        text: "Este mensaje tiene un límite máximo de 700 caracteres. Por favor, asegúrate que no exceda este límite. Gracias.",
+        confirmButtonText: "Ok",
+        icon: "warning",
+        confirmButtonColor: "#314c53",
+      });
+    }
+    const data = {
+      NombreApellido: inputs.nombre.value,
+      NombreEmpresa: inputs.empresa.value,
+      Telefono: inputs.telefono.value,
+      CorreoElectronico: inputs.email.value,
+      Soluciones: obtenerRadio(),
+      Mensaje: inputs.mensaje.value,
+    };
+
+    return await enviarSolicitud(data);
+  });
+
+    </script>

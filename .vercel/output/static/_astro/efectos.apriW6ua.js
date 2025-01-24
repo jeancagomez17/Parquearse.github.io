@@ -1,0 +1,1 @@
+function a(i,l){let n=0;window.addEventListener("scroll",function(){var c=document.querySelectorAll(`.${i}`);let o=window.scrollY||document.documentElement.scrollTop;c.forEach(function(t){var e=t.getBoundingClientRect();o>n&&e.top<window.innerHeight&&e.bottom>0&&t.classList.add("animate__animated",l)}),n=o<=0?0:o})}export{a};

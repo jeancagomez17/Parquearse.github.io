@@ -1,0 +1,25 @@
+<div id="publicidadModal" class="fixed inset-0 flex justify-center items-center bg-black bg-opacity-90 z-50">
+  
+        <div class="flex flex-col justify-center items-center max-w-[80%] max-h-[90%] text-center relative">
+            <!-- Imagen de publicidad -->
+            <img src="https://parquearse.com/images/campa%C3%B1a.jpg" alt="Publicidad" class="max-w-full h-auto mx-auto md:max-w-[35%] sm:max-h-[50%]">
+            
+            <!-- Botón para cerrar el modal (Posicionado en la esquina superior derecha) -->
+            <button id="closeButton" class="absolute top-1 right-1 bg-red-600 text-white px-4 py-2 rounded-full hover:bg-red-700 focus:outline-none">
+                X
+            </button>
+
+            <a class="p-4 text-white text-4xl hover:text-green-800 transition-all ease-in-out " href="#">Regístrate aqui</a>
+        </div>
+   
+</div>
+<script is:inline>
+  // Seleccionamos el modal y el botón
+  const modal = document.getElementById("publicidadModal");
+    const closeButton = document.getElementById("closeButton");
+
+    // Función para cerrar el modal
+    closeButton.addEventListener("click", () => {
+        modal.style.display = "none"; // Ocultar el modal
+    });
+</script>

@@ -1,0 +1,89 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+import Footer from '@components/Footer.astro';
+import Header from '@components/Header.astro';
+const prueba = ""
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Pagina principal de Parquearse" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="icon" href="/images/favicon.ico" />
+		<meta name="generator" content={Astro.generator} />
+		<link
+		id="u-theme-google-font"
+		rel="stylesheet"
+		href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i"
+	  />
+	  <link
+		id="u-page-google-font"
+		rel="stylesheet"
+		href="https://fonts.googleapis.com/css?family=Roboto+Condensed:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+	  />
+	  <link
+	  rel="stylesheet"
+	  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+	/>
+	<link href="https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.css" rel="stylesheet" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.css">
+	<script is:inline src="https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.js"></script>
+	<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.css"
+  />
+  <script is:inline  src="/js/mapkick.js"></script>
+  <script is:inline>
+	Mapkick.options = {style: "https://demotiles.maplibre.org/style.json"}
+  </script>
+		<title>{title}</title>
+	</head>
+	<body>
+		<Header/>
+		<main id="contenId">	
+			<slot />
+		</main>
+		
+		<Footer/>
+	</body>
+</html>
+<style is:global>
+	body{
+		background-color: aliceblue;
+	}
+	#contenId{
+		padding: 5px 0px;
+		margin-top: 55pt;
+		
+	}
+	section{
+		padding: 25px 10% !important;
+	}
+	@media screen and (max-width:767px){
+		#contenId{
+		padding: 10px 4%;
+	}
+	section{
+		padding: 15px 5% !important;
+	}
+	}
+	@media screen and (min-width:767px) and (max-width:1023px){
+		#contenId{
+		padding: 10px 4%;
+	
+	}
+	section{
+		padding: 15px 5% !important;
+	}
+}
+
+	
+
+</style>
+

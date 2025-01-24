@@ -1,0 +1,58 @@
+---
+import Layout from "@layouts/Layout.astro";
+---
+
+<Layout title="Politicas">
+  <section class="mb-4">
+    <h1 class="font-semibold text-center text-3xl sm:text-5xl text-[#8fc74a]">
+      Normas y reglamentos
+    </h1>
+  </section>
+  <section>
+    <img src="/images/reglamento.png" alt="reglamento" srcset="" />
+  </section>
+
+  <section class="mb-3">
+    <h2 class="text-center font-semibold text-3xl sm:text-5xl mb-7 text-[#8fc74a]">Decreto</h2>
+    <p class="text-xl">
+      Las tarifas de los parqueaderos públicos en Bucaramanga, los regula la
+      alcaldía municipal, mediante el decreto 0029 del 26 de Febrero de 2024.
+      Este decreto cambió la forma de cobro en Bucaramanga. A partir de su
+      entrada en vigencia se estableció:
+    </p>
+    <ul class="list-disc text-md p-4">
+      <li>
+        Los primeros 15 minutos de la primera hora tienen un valor diferenciado.
+      </li>
+      <li>A partir del minuto 16 se cobra la hora completa</li>
+      <li>
+        Se otorgará un plazo equivalente a diez (10) minutos adicionales a la
+        primera hora sin costo alguno para el usuario. Este beneficio sólo
+        aplicará para la primera hora de parqueo y no es acumulable para las
+        horas subsiguientes
+      </li>
+    </ul>
+    <article class="prose lg:prose-xl mx-auto flex items-center justify-center">
+      <div class="w-full max-w-4xl h-[90vh] p-4 bg-white rounded-lg shadow-lg">
+        <iframe src="/pdf/decreto0219.pdf" class="w-full h-full border-0"
+        ></iframe>
+      </div>
+    </article>
+  </section>
+
+  <section>
+    <h2 class="text-center font-semibold text-3xl sm:text-5xl mb-7 text-[#8fc74a]">Politíca de tratamientos de datos</h2>
+    <p class="text-xl">
+      PARQUEARSE SAS, declara a sus grupos de interés su política de tratamiento
+      de datos personales, la cual se desarrollará a tráves de una norma que da
+      cumplimiento al régimen de protección de datos personales , consagrado en
+      la ley 1581 de 2012.
+    </p>
+    <article class="prose lg:prose-xl mx-auto flex items-center justify-center">
+        <div class="w-full max-w-4xl h-[90vh] p-4 bg-white rounded-lg shadow-lg">
+          <iframe src="/pdf/politicadetratamientosdedatos.pdf" class="w-full h-full border-0"
+          ></iframe>
+        </div>
+      </article>
+  </section>
+</Layout>

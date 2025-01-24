@@ -1,0 +1,10 @@
+---
+
+interface Props {
+	type: any;
+    value:string, id:string
+}
+const { type, value, id } = Astro.props;
+---
+
+<button type={type} class="px-5 py-2 bg-gradient-to-r lg:text-xl text-sm  from-green-500 to-green-700 text-white font-medium rounded-lg" id={id}>{value}</button>

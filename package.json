@@ -1,0 +1,30 @@
+{
+  "name": "parquearse",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build --config astro.config.mjs",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/mdx": "^3.1.9",
+    "@astrojs/node": "^8.3.4",
+    "@astrojs/tailwind": "^5.1.2",
+    "@astrojs/vercel": "^7.8.2",
+    "astro": "^4.16.6",
+    "axios": "^1.7.7",
+    "glider-js": "^1.7.9",
+    "https": "^1.0.0",
+    "sweetalert2": "^11.14.5",
+    "tailwindcss": "^3.4.14",
+    "typescript": "^5.6.3",
+    "undici": "^6.20.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.8.6"
+  }
+}
