@@ -17,6 +17,7 @@
     "@astrojs/vercel": "^7.8.2",
     "astro": "^4.16.6",
     "axios": "^1.7.7",
+    "dotenv": "^16.4.7",
     "glider-js": "^1.7.9",
     "https": "^1.0.0",
     "sweetalert2": "^11.14.5",
@@ -27,5 +28,5 @@
   "devDependencies": {
     "@types/node": "^22.8.6"
   },
-   "packageManager": "pnpm@8.6.0"
+  "packageManager": "pnpm@8.6.0"
 }

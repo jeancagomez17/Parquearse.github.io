@@ -1,4 +1,5 @@
 
+
 export function animacionDiv(div:any, animacion:string){
 	// Detectar el scroll y agregar la clase cuando el div esté en la pantalla
 	let lastScrollTop = 0;

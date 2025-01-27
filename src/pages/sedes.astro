@@ -35,7 +35,7 @@ const ciudades = [
           <img src="/images/gps.png" alt="mockup">
       </div>                
   </div>
-</section>
+</section> 
   <section class="service  mt-0" id="buscar">
     <div class="bg-gray-200 p-2 border border-gray-400">
       <div class="border-t border-2 border-[#8fc74a] my-8 mx-auto w-full"></div>
@@ -104,10 +104,11 @@ const ciudades = [
 
 
   <input id="inputElement" data-ciudades={JSON.stringify(ciudades)} type="hidden">
-  <script is:inline src="/js/sedes.map.js"></script>
-  <script>
+  <script is:inline src="/js/sedes.map.js" ></script>
+  <script >
+  
     import {animacionDiv} from '@lib/efectos'
-
+  
     animacionDiv('service', 'animate__backInLeft');
     </script>
 </Layout>

@@ -1,3 +1,4 @@
+
 const inputElement = document.getElementById('inputElement');
 // Accede al valor del atributo data-message
 const ciudades = JSON.parse(inputElement.dataset.ciudades);
